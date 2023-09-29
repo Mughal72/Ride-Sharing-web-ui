@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Sharing App</title>
+    
+</head>
+<style>
+    Styles.css
+* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #333;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #5100ff;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Form styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+button[type="submit"] {
+    background-color: #5d00ff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5d00ff;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #0b0b0b;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Ride Sharing App</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#registration">User Registration</a></li>
+            <li><a href="#booking">Ride Booking</a></li>
+            <li><a href="#carpooling">Carpooling</a></li>
+            <li><a href="#payment">Payment Processing</a></li>
+            <li><a href="#tracking">Real-Time Tracking</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="registration">
+            <h2>User Registration</h2>
+            <form id="registrationForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="booking">
+            <h2>Ride Booking</h2>
+            <form id="bookingForm">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required><br>
+        
+                <label for="pickupLocation">Pickup Location:</label>
+                <input type="text" id="pickupLocation" name="pickupLocation" required><br>
+        
+                <label for="rideDateTime">Ride Date and Time:</label>
+                <input type="datetime-local" id="rideDateTime" name="rideDateTime" required><br>
+        
+                <label for="rideType">Ride Type:</label>
+                <select id="rideType" name="rideType" required>
+                    <option value="Single">Single</option>
+                    <option value="Carpool">Carpool</option>
+                </select><br>
+        
+                <!-- Placeholder for Available Vehicles -->
+                <label for="availableVehicles">Available Vehicles:</label>
+                <select id="availableVehicles" name="availableVehicles" required>
+                    <option value="Vehicle1">Vehicle 1</option>
+                    <option value="Vehicle2">Vehicle 2</option>
+                    <option value="Vehicle3">Vehicle 3</option>
+                    <!-- Add dynamic options based on available vehicles -->
+                </select><br>
+        
+                <button type="submit">Book Ride</button>
+            </form>
+        </section>
+        
+
+        <section id="carpooling">
+            <h2>Carpooling</h2>
+            <p>Share your ride with others and reduce your travel costs.</p>
+            <form id="carpoolingForm">
+                <label for="availableSeats">Available Seats:</label>
+                <input type="number" id="availableSeats" name="availableSeats" required><br>
+        
+                <label for="smokingAllowed">Smoking Allowed:</label>
+                <input type="checkbox" id="smokingAllowed" name="smokingAllowed"><br>
+        
+                <label for="musicPreference">Music Preference:</label>
+                <select id="musicPreference" name="musicPreference">
+                    <option value="NoPreference">No Preference</option>
+                    <option value="Classical">Classical</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                </select><br>
+        
+                <button type="submit">Create Carpool</button>
+            </form>
+        </section>
+
+        <section id="payment">
+            <h2>Payment Processing</h2>
+            <form id="paymentForm">
+                <label for="paymentAmount">Payment Amount:</label>
+                <input type="text" id="paymentAmount" name="paymentAmount" required><br>
+        
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="CreditCard">Credit Card</option>
+                    <option value="PayPal">PayPal</option>
+                    <!-- Add more payment methods as needed -->
+                </select><br>
+        
+                <!-- Payment processing options -->
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number"><br>
+        
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY"><br>
+        
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV"><br>
+        
+                <label for="paypalEmail">PayPal Email:</label>
+                <input type="email" id="paypalEmail" name="paypalEmail" placeholder="Enter PayPal email"><br>
+        
+                <button type="submit">Process Payment</button>
+            </form>
+        </section>
+        
+
+        <section id="tracking">
+            <h2>Real-Time Vehicle Tracking</h2>
+            <p>Track your ride in real-time and know when it will arrive.</p>
+            <form id="trackingForm">
+                <label for="rideID">Ride ID:</label>
+                <input type="text" id="rideID" name="rideID" required><br>
+        
+                <button type="submit">Track Ride</button>
+            </form>
+            <div id="trackingResults">
+                <!-- Real-time tracking results will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Ride Sharing App
+    </footer>
+</body>
+</html>
